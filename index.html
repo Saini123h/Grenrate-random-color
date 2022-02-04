@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: arial;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            font-family: candara;
+        }
+    </style>
+</head>
+<body>
+   <h1>Automatic genrate random color</h1>
+   <h2 id="color"></h2>
+
+   <script>
+       function getRandomColor()
+       {
+           var letter="0123456789ABCDEF";
+           var color ="#";
+           for(var i=0; i<6; i++)
+           {
+           color += letter[Math.floor(Math.random()*16)];
+           }
+           return color;
+        }
+           setInterval(function(){
+               document.getElementById("color").innerHTML= getRandomColor();
+               document.body.style.background = getRandomColor();
+               document.body.trasition="0.5s"
+           },2000);
+       document.body.style.background = getRandomColor();
+       </script>
+</body>
+</html>
